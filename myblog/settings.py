@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'core',
     'pages',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Redirecciones de auth
+LOGIN_REDIRECT_URL = 'pages:list'
+LOGOUT_REDIRECT_URL = 'home'
+LOGIN_URL = 'accounts:login'
+
