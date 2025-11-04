@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+	<article>
+		<h1>{{ page.title }}</h1>
+		<h2>{{ page.subtitle }}</h2>
+		<p><small>Fecha: {{ page.pub_date }}{% if page.author %} | Autor: {{ page.author.username }}{% endif %}</small></p>
+
+		{% if page.image %}
+			<p><img src="{{ page.image.url }}" alt="{{ page.title }}" style="max-width: 400px; height: auto;"></p>
+		{% endif %}
+
+		<div>
+			{{ page.content|safe }}
+		</div>
+
+		<p><a href="{% url 'pages:list' %}">← Volver al listado</a></p>
+
+		{% if user.is_authenticated %}
+			<p>
+				<a href="{% url 'pages:edit' page.slug %}">Editar</a> |
+				<a href="{% url 'pages:delete' page.slug %}">Borrar</a>
+			</p>
+		{% endif %}
+	</article>
+{% endblock %}

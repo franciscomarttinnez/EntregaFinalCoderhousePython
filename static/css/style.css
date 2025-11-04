@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background: #eee;
+    text-align: center;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+.messages {
+    background-color: #dff0d8;
+    border: 1px solid #3c763d;
+    padding: 10px;
+    margin-bottom: 20px;
+    list-style: none;
+}

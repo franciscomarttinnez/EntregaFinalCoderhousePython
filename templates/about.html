@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Acerca de mí{% endblock %}
+
+{% block content %}
+	<h1>Acerca de mí</h1>
+	<p><strong>Nombre:</strong> {{ owner_name }}</p>
+	<p><strong>Rol:</strong> {{ owner_role }}</p>
+	<p><strong>Bio:</strong> {{ owner_bio }}</p>
+
+	<hr>
+
+	<h2>Este proyecto</h2>
+	<ul>
+		<li>Framework: Django</li>
+		<li>Funcionalidades: páginas tipo blog, perfiles, autenticación y mensajería</li>
+		<li>Ruta de esta vista: <code>/about/</code></li>
+	</ul>
+{% endblock %}

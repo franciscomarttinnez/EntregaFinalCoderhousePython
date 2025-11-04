@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Páginas{% endblock %}
+
+{% block content %}
+	<h1>Páginas</h1>
+
+	<p>
+		{% if user.is_authenticated %}
+			<a href="{% url 'pages:create' %}">Crear nueva página</a>
+		{% else %}
+			<span>Para crear o editar páginas, iniciá sesión.</span>
+		{% endif %}
+	</p>
+
+	{% if pages %}
+		<ul>
+			{% for page in pages %}
+				<li>
+					<h3>{{ page.title }}</h3>
+					<p>{{ page.subtitle }}</p>
+					<p><small>Fecha: {{ page.pub_date }}</small></p>
+
+					<a href="{% url 'pages:detail' page.slug %}">Leer más</a>
+
+					{% if user.is_authenticated %}
+						| <a href="{% url 'pages:edit' page.slug %}">Editar</a>
+						| <a href="{% url 'pages:delete' page.slug %}">Borrar</a>
+					{% endif %}
+				</li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p><em>No hay páginas aún</em></p>
+	{% endif %}
+{% endblock %}
