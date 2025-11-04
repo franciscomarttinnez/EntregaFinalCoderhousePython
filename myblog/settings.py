@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'pages',
     'accounts',
     'profiles',
+    'messenger',
 ]
 
 MIDDLEWARE = [

@@ -16,7 +16,8 @@
                 <li><a href="/about/">Acerca de mí</a></li>
                 <li><a href="/pages/">Páginas</a></li>
 
-                {% if user.is_authenticated %}
+{% if user.is_authenticated %}
+	<li><a href="{% url 'messenger:inbox' %}">Mensajes</a></li>
 	<li><a href="{% url 'profiles:detail' %}">Perfil</a></li>
 	<li>
 		<form action="{% url 'accounts:logout' %}" method="post" style="display:inline;">

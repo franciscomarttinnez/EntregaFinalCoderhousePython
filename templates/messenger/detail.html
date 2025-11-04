@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}{{ message_obj.subject }}{% endblock %}
+
+{% block content %}
+	<h1>{{ message_obj.subject }}</h1>
+	<p>
+		De: <strong>{{ message_obj.sender.username }}</strong> |
+		Para: <strong>{{ message_obj.recipient.username }}</strong> |
+		<small>{{ message_obj.created_at|date:"d/m/Y H:i" }}</small>
+	</p>
+	<hr>
+	<p style="white-space: pre-wrap;">{{ message_obj.body }}</p>
+
+	<p>
+		<a href="{% url 'messenger:inbox' %}">← Volver</a>
+	</p>
+{% endblock %}

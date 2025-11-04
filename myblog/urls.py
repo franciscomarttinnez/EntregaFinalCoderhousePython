@@ -29,6 +29,7 @@ urlpatterns = [
     path('pages/', include('pages.urls')),
     path('profile/', include(('profiles.urls', 'profiles'), namespace='profiles')),
     path('', include(('accounts.urls', 'accounts'), namespace='accounts')),
+    path('messages/', include(('messenger.urls', 'messenger'), namespace='messenger')),
 ]
 
 if settings.DEBUG:

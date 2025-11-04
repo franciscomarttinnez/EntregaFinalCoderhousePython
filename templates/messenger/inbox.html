@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Mensajes recibidos{% endblock %}
+
+{% block content %}
+	<h1>Mensajes recibidos</h1>
+
+	<p>
+		<a href="{% url 'messenger:compose' %}">Nuevo mensaje</a> |
+		<a href="{% url 'messenger:sent' %}">Enviados</a>
+	</p>
+
+	{% if messages_list %}
+		<table>
+			<thead>
+				<tr>
+					<th>De</th>
+					<th>Asunto</th>
+					<th>Fecha</th>
+					<th>Estado</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for m in messages_list %}
+					<tr>
+						<td>{{ m.sender.username }}</td>
+						<td><a href="{% url 'messenger:detail' m.pk %}">{{ m.subject }}</a></td>
+						<td>{{ m.created_at|date:"d/m/Y H:i" }}</td>
+						<td>{% if m.is_read %}Leído{% else %}<strong>No leído</strong>{% endif %}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% else %}
+		<p><em>No tenés mensajes.</em></p>
+	{% endif %}
+{% endblock %}
