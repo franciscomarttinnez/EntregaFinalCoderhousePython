@@ -27,6 +27,7 @@ urlpatterns = [
     path('', core_views.home, name='home'),
     path('about/', core_views.about, name='about'),
     path('pages/', include('pages.urls')),
+    path('profile/', include(('profiles.urls', 'profiles'), namespace='profiles')),
     path('', include(('accounts.urls', 'accounts'), namespace='accounts')),
 ]
 
