@@ -45,3 +45,19 @@ footer {
     margin-bottom: 20px;
     list-style: none;
 }
+body {
+	background-color: #f8f9fa;
+}
+
+h1, h2 {
+	color: #343a40;
+	margin-top: 1rem;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
