@@ -7,8 +7,8 @@ from django.shortcuts import render
 
 def about(request):
     context = {
-        "owner_name": "Tu Nombre",
+        "owner_name": "Francisco Martinez",
         "owner_role": "Desarrollador",
-        "owner_bio": "Breve descripción sobre vos. Intereses, experiencia y objetivo del blog.",
+        "owner_bio": "Desarrollando pagina de blog entrega final coderhouse",
     }
     return render(request, "about.html", context)
